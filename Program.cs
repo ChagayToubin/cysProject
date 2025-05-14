@@ -19,14 +19,7 @@ namespace Atbash
             string MessageDecoder = "";
             foreach (char letter in EncryptedMessage.ToLower())
             {
-                if (char.IsLetter(letter))
-                {
-                    MessageDecoder += DecodingLetter(letter);
-                }
-                else
-                {
-                    MessageDecoder += letter;
-                }
+                MessageDecoder += char.IsLetter(letter) ? DecodingLetter(letter) : letter;
             }
             return MessageDecoder;
         }
@@ -42,6 +35,16 @@ namespace Atbash
         {
             var messagePoints = new Dictionary<string, int> { { "a", 1 } };
             return messagePoints;
+        }
+
+        static string ClearWord(string word)
+        {
+            string clearWord = "";
+            foreach (char letter in  word)
+            {
+                clearWord += char.IsLetter(letter) ? letter : "";
+            }
+            return clearWord;
         }
     }
 }
