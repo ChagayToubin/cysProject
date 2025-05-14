@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            PrintDictionary(DangerousWordsCalculator("hey zalmen ma", ["hey", "ma"]));
+            Console.WriteLine("hello, world!");
         }
         static void OverallView(Dictionary<string, int> MessmessagePoint) 
         {
@@ -26,11 +26,13 @@
             {
                 if (messege[i] == ' ')
                 {
+                    temp = ClearWord(temp);
                     sumWords += dangerousWords.Contains(temp) ? 1 : 0;
                     temp = "";
                 }
                 else if (i == messege.Length - 1)
                 {
+                    temp = ClearWord(temp);
                     temp += messege[i];
                     sumWords += dangerousWords.Contains(temp) ? 1 : 0;
                 }
@@ -40,23 +42,9 @@
                 }
             }
             var messagePoints = new Dictionary<string, int> { { messege, sumWords } };
-
-
             return messagePoints;
 
 
         }
-
-        static void PrintDictionary(Dictionary<string, int> dict)
-        {
-            foreach (KeyValuePair<string, int> item in dict)
-            {
-                Console.WriteLine($"{item.Key}: {item.Value}");
-            }
-        }
-
-
-
-
     }
 }
