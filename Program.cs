@@ -11,5 +11,17 @@
         {
             return "Message - Experience";
         }
+
+        static Dictionary<string, int> DangerousWordsCalculator(string messege)
+        {
+            var messagePoints = new Dictionary<string, int> { { "a", 1 } };
+            return messagePoints;
+
+
+        }
+
+
+
+
     }
 }
