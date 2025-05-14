@@ -6,13 +6,13 @@ namespace Atbash
     {
         static void Main(string[] args)
         {
-            OverallView(DangerousWordsCalculator(MessageDecoder("ds"), ["1","2"]));
-         }
+            string m = "Lfi ulixvh ziv kivkzirmt uli z nzqli zggzxp lm gsv Arlmrhg vmvnb. Gsv ilxpvg fmrgh ziv ivzwb zmw dzrgrmt uli gsv hrtmzo. Ylnyh szev yvvm kozxvw mvzi pvb olxzgrlmh. Mfpsyz urtsgvih ziv hgzmwrmt yb uli tilfmw rmurogizgrlm. Gsv zggzxp droo yv hfwwvm zmw hgilmt -- gsvb dlm’g hvv rg xlnrmt. Dv nfhg hgzb srwwvm zmw pvvk gsv kozm hvxivg fmgro gsv ozhg nlnvmg. Erxglib rh mvzi. Hgzb ivzwb.";
+            OverallView(DangerousWordsCalculator(MessageDecoder(m), ["bomb", "nukhba", "fighter", "rocket", "secret"]));
+        }
 
         static void OverallView(Dictionary<string, int> MessmessagePoint) 
         {
             string message = "";
-            Console.WriteLine("chagay");
             int numPoint = MessmessagePoint.Values.First();
 
             if (numPoint > 15 || numPoint < 1)
@@ -52,9 +52,6 @@ namespace Atbash
             }
             return MessageDecoder;
         }
-
-
-        
         
         static Dictionary<string, int> DangerousWordsCalculator(string messege, string[] dangerousWords)
         {
@@ -81,24 +78,15 @@ namespace Atbash
             }
             var messagePoints = new Dictionary<string, int> { { messege, sumWords } };
             return messagePoints;
-
+        }
 
         static char DecodingLetter(char Letter)
-
-
         {
             int formula = 'z' - (Letter - 'a');
             char DecodingLetter = Convert.ToChar(formula);
             return DecodingLetter;
         }
 
-
-
-        static Dictionary<string, int> DangerousWordsCalculator(string messege,string[]Arry)
-        {
-            var messagePoints = new Dictionary<string, int> { { "a", 0 } };
-            return messagePoints;
-        }
 
         static string ClearWord(string word)
         {
