@@ -1,4 +1,6 @@
-﻿namespace Atbash
+﻿using System.Reflection.Emit;
+
+namespace Atbash
 {
     internal class Program
     {
@@ -6,7 +8,6 @@
         {
             Console.WriteLine("Hello, World!");
             OverallView(DangerousWordsCalculator(MessageDecoder("ds"), ["1","2"]));
-
          }
         static void OverallView(Dictionary<string, int> MessmessagePoint) 
         {
@@ -44,20 +45,37 @@
       
         static string  MessageDecoder(string EncryptedMessage)
         {
-            return "Message - Experience";
+            string MessageDecoder = "";
+            foreach (char letter in EncryptedMessage.ToLower())
+            {
+                MessageDecoder += char.IsLetter(letter) ? DecodingLetter(letter) : letter;
+            }
+            return MessageDecoder;
+        }
+
+        static char DecodingLetter(char Letter)
+
+        {
+            int formula = 'z' - (Letter - 'a');
+            char DecodingLetter = Convert.ToChar(formula);
+            return DecodingLetter;
         }
 
         static Dictionary<string, int> DangerousWordsCalculator(string messege,string[]Arry)
         {
             var messagePoints = new Dictionary<string, int> { { "a", 0 } };
             return messagePoints;
-
-
         }
 
-
-
-
+        static string ClearWord(string word)
+        {
+            string clearWord = "";
+            foreach (char letter in  word)
+            {
+                clearWord += char.IsLetter(letter) ? letter : "";
+            }
+            return clearWord;
+        }
     }
 
 }
